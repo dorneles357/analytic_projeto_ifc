@@ -1,0 +1,44 @@
+---
+title: 'pib per capta ' #nome da variável
+author: "Tayson Júnior" #seu nome
+date: '17/06/22' #data da análise
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(readr)
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+x10 <- read_delim("x10.csv", #altere para variável em análise
+                 delim = ";", 
+                 escape_double = FALSE, 
+                col_types = cols(...1 = col_skip()), 
+                trim_ws = TRUE
+                )
+               
+```
+
+## Análise exploratória dos dados
+
+```{r echo=FALSE}
+summary(x10$pib_percapta #variável para análise
+				)
+```
+
+
+## Boxplot
+
+```{r echo=FALSE}
+boxplot(x10$pib_percapta, #variável para análise
+		ylab = 'pib_percapta' #Título da variável
+				) 
+```
+
+##Encontrei 3 pontos froa da curva o municipio 4213104 piratuba 9.855290e+15; 4204350 cordilheira alta 5.005883e+15 e 4219101 vargeao 4.770928e+15.
+
+
+

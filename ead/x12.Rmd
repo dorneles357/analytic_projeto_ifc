@@ -1,0 +1,42 @@
+---
+title: 'variavel servicos ' #nome da variável
+author: "Tayson Júnior" #seu nome
+date: '17/06/22' #data da análise
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(readr)
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+x12 <- read_delim("x12.csv", #altere para variável em análise
+                 delim = ";", 
+                 escape_double = FALSE, 
+                col_types = cols(...1 = col_skip()), 
+                trim_ws = TRUE
+                )
+               
+```
+
+## Análise exploratória dos dados
+
+```{r echo=FALSE}
+summary(x12$vab_servicos #variável para análise
+				)
+```
+
+
+## Boxplot
+
+```{r echo=FALSE}
+boxplot(x12$vab_servicos, #variável para análise
+		ylab = 'vab_servicos' #Título da variável
+				) 
+```
+
+## Encontrei 20 valors fora da curva, os municipios de chapeco, conconcordia, joaçaba xanxere, são miguel do oeste, campos novos, maravilha, pinhalzinho, xaxim, sao lourenco do oeste, capinzal, cunha pora, quilombo, itapiranga, herval d'oeste, plamitos, cordilheira alta e sãoosé do cedro
+
+A região A se destaca dos demais municípios se afastado da tendência central.

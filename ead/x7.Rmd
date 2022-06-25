@@ -1,0 +1,38 @@
+---
+title: "taxa de analfabetismo" #nome da variável
+author: "wesley" #seu nome
+date: '16/06' #data da análise
+output:
+  pdf_document: default
+  html_document: default 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE
+                      )
+
+library(readr)
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+x7 <- read_delim("x7.csv", delim = ";", escape_double = FALSE, 
+    trim_ws = TRUE)
+```
+
+## Análise exploratória dos dados
+
+```{r echo=FALSE}
+summary(x7$taxa_analfabetismo #variável para análise
+				)
+```
+
+
+## Boxplot
+
+```{r echo=FALSE}
+boxplot(x7$taxa_analfabetismo,#variável para análise
+				ylab = 'taxa de analfabetismo' #Título da variável
+				)
+```
+
+## Descrição
+
+A região A se destaca de 100 á 500 são são joao do oeste, peritiba,luzerna,joaçaba,itapiranga,ipora do oeste,tunapolis,cunhatai,alto bela vista, arabuta,concordia,saudades,chapeco,treze tilias,modai,sao miguel do oeste,presidente castello branco,são carlos,herval d`oeste,cordilheira alta,cunha pora,pimhalzinho,maravilha.temos 1020 á 1495 são estes municipios guatambu, tigrinhos, princesa,bom jeus caxambu do sul,abelardo luz,ipuaçu,paraiso,sao miguel da boa vista,romelandia,santiago do sul,coronel martins,irati,sao bernardino,ouro verde,flor do sertão,planalto alegre,campo ere,novo horizonte,santa terezinha do progresso,sul brasil,barra bonita,vargem,saltinho,galvão,entre rios.

@@ -1,0 +1,41 @@
+---
+title: 'Percentual de população urbana ' #nome da variável
+author: "Tayson Júnior" #seu nome
+date: '05/06/22' #data da análise
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(readr)
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+x2 <- read_delim("x2.csv", #altere para variável em análise
+                 delim = ";", 
+                 escape_double = FALSE, 
+                col_types = cols(...1 = col_skip()), 
+                trim_ws = TRUE
+                )
+               
+```
+
+## Análise exploratória dos dados
+
+```{r echo=FALSE}
+summary(x2$percent_pop_urbana #variável para análise
+				)
+```
+
+
+## Boxplot
+
+```{r echo=FALSE}
+boxplot(x2$percent_pop_urbana, #variável para análise
+		ylab = 'percent_pop_urbana' #Título da variável
+				) 
+```
+
+##O municipio 4209003-joacaba Está um pouco acima da média com 9224 
+ 

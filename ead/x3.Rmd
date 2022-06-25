@@ -1,0 +1,38 @@
+---
+title: "percentual de domicilio de energia eletrica" #nome da variável
+author: "wesley" #seu nome
+date: '16/06' #data da análise
+output:
+  pdf_document: default
+  html_document: default 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE
+                      )
+
+library(readr)
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+x3 <- read_delim("x3.csv", delim = ";", escape_double = FALSE, 
+    trim_ws = TRUE)
+```
+
+## Análise exploratória dos dados
+
+```{r echo=FALSE}
+summary(x3$percent_domc_energia_eletrica #variável para análise
+				)
+```
+
+
+## Boxplot
+
+```{r echo=FALSE}
+boxplot(x3$percent_domc_energia_eletrica,#variável para análise
+				ylab = 'percentual de domicilio de energia eletrica' #Título da variável
+				)
+```
+
+## Descrição
+
+A região A se destaca dos demais municípios se afastado da tendência central que estao com de 100 são: abdon bastista, barra bonita,belmonte,bom jeus do oeste,cordilheira alta,formosa do sul,guaraciaba,ibicare,ipora do oeste,iraceminha,jabora,joaçaba,larecerdopolis,marema,modelo,precidente castello branco,santiago do sul,sao joao do oeste,saudades, sul brasil,treze tlilias, os  de 900 a 1000  são: sao miguel da boa vista,aguas de chapeco,romelandia,santa helena,alto bela vista,arabuta,ipumirim,pinhalzinho, santa terezinha do progresso.Temos a sima de 9900 são palma sola,xanxere, aberlardo luz, passos maia, vargem, aguas frias, agua doce, ouro verde, gavao, peritiba, lindoia do sul, cunha pora, pial, xaxim, princesa,sao jose do cedro,sao carlos, descanso, novo horizonte, irani,paraiso, catanduvas,irati,nova itraberba,planalto alegre,coronel freitas, palmitos, xavatina, bom jesus, guatambu,vargem bonita, riqueza,tuanapolis,concórdia anchieta,caibi,guaruja do sul,chapecó, serra alta, itá, mondai,celso ramos, bandeirantes, erval velho, são domigos,herval d´oeste, sao miguel do oeste, seara, piratuba,zoetea,arvoredo,campos novos, cunhatai, ipira jardinopolis, luzerna,nova erechim, faxinal dos guedes,quilombo,itapiranga, maravilha,capinzal.
