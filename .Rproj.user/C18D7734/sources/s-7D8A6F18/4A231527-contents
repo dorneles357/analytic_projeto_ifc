@@ -1,0 +1,38 @@
+---
+title: "abstecimento_agua" #nome da variável
+author: "wesley" #seu nome
+date: '06/06' #data da análise
+output:
+  pdf_document: default
+  html_document: default 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE
+                      )
+
+library(readr)
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+x3 <- read_delim("x3.csv", delim = ";", escape_double = FALSE, 
+    trim_ws = TRUE)
+```
+
+## Análise exploratória dos dados
+
+```{r echo=FALSE}
+summary(x3$perc_domc_abstecimento_agua #variável para análise
+				)
+```
+
+
+## Boxplot
+
+```{r echo=FALSE}
+boxplot(x3$perc_domc_abstecimento_agua,#variável para análise
+				ylab = 'abstecimento_agua' #Título da variável
+				)
+```
+
+## Descrição
+
+Os municipios que estão a baixo de dois mil são formosa do sul, uniao do oeste,Seara,Galvao,Romelandia,Dinisio cerqueira,Guaruja do sul,Nova Erechim.o que esta entre quatro á oito mil sao marema, ipuacu, cordilheira alta, xanxere, larcerdopolis,nova itaberaba,jabora, lageado grande, vargeao, arabuta, arvoredo,conel martins. 

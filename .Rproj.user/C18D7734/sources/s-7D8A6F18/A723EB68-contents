@@ -1,0 +1,43 @@
+---
+title: 'receitas ' #nome da variável
+author: "Tayson Júnior" #seu nome
+date: '17/06/22' #data da análise
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(readr)
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+x11 <- read_delim("x11.csv", #altere para variável em análise
+                 delim = ";", 
+                 escape_double = FALSE, 
+                col_types = cols(...1 = col_skip()), 
+                trim_ws = TRUE
+                )
+               
+```
+
+## Análise exploratória dos dados
+
+```{r echo=FALSE}
+summary(x11$receitas #variável para análise
+				)
+```
+
+
+## Boxplot
+
+```{r echo=FALSE}
+boxplot(x11$receitas, #variável para análise
+		ylab = 'percent_pop_urbana' #Título da variável
+				) 
+```
+
+## Encontrei 9 Pontos fora da curva nos municipios 4204202 chapeco 3.285918e+15;4204301 concordia 1.243737e+15; 4209003 joacaba 7.086996e+14; 4219507 xanxere 6.722982e+14; 4203600 campos novos 6.473790e+14; 4219705 xaxim 4.920818e+14; 4217204 sao miguel do oeste 4.790965e+14; 4203907 capinzal 3.891909e+14; 4216909 sao lourenco do oeste 3.874148e+1
+ 
+
+A região A se destaca dos demais municípios se afastado da tendência central.

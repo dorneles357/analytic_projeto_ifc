@@ -1,0 +1,42 @@
+---
+title: 'vab industria ' #nome da variável
+author: "Tayson Júnior" #seu nome
+date: '17/06/22' #data da análise
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(readr)
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+x13 <- read_delim("x13.csv", #altere para variável em análise
+                 delim = ";", 
+                 escape_double = FALSE, 
+                col_types = cols(...1 = col_skip()), 
+                trim_ws = TRUE
+                )
+               
+```
+
+## Análise exploratória dos dados
+
+```{r echo=FALSE}
+summary(x13$vab_industria #variável para análise
+				)
+```
+
+
+## Boxplot
+
+```{r echo=FALSE}
+boxplot(x13$vab_industria, #variável para análise
+		ylab = 'vab_industria' #Título da variável
+				) 
+```
+
+## Encontrei 22 municipios fora da curva, chapeco, campos novos, piratuba, concordia, xanxere, são miguel do oeste, pinhalzinho, maravilha, xaxim, joaçaba, vargem bonita, faxinal dos guedes, seara, cunha pora, capizal, mondai, são lorenço do oeste, abelardo luz, herval d'oeste, quilombo, itapiranga e aguas de chapeco 
+
+A região A se destaca dos demais municípios se afastado da tendência central.

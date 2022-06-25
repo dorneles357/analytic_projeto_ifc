@@ -1,0 +1,38 @@
+---
+title: "população economicamente ativa" #nome da variável
+author: "wesley" #seu nome
+date: '16/06' #data da análise
+output:
+  pdf_document: default
+  html_document: default 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE
+                      )
+
+library(readr)
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+x8 <- read_delim("x8.csv", delim = ";", escape_double = FALSE, 
+    trim_ws = TRUE)
+```
+
+## Análise exploratória dos dados
+
+```{r echo=FALSE}
+summary(x8$pop_economicamente_ativa #variável para análise
+				)
+```
+
+
+## Boxplot
+
+```{r echo=FALSE}
+boxplot(x8$pop_economicamente_ativa,#variável para análise
+				ylab = 'população economicamente ativa' #Título da variável
+				)
+```
+
+## Descrição
+
+A região A se destaca dos demais municípios se afastado da tendência central são 6 mil á 25 milsão são carlos, mondai dinisio cerqueira,cunha pora,guaraciaba, sao jose do cedro, abaerlardo luz, itapiranga, palmitos, pinhazinho,seara, herval d´oeste,caopinzal,sao lourenço do oeste,maravilha,xaxim,joaçaba,campos novos,sao miguel do oeste,xanxere, temos dois mais elevado que são concordia com 40040 e chapecó 103239.

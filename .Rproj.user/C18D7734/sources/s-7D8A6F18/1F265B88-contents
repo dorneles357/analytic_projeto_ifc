@@ -1,0 +1,38 @@
+---
+title: "numero leitos estabelecimento de saude" #nome da variável
+author: "wesley" #seu nome
+date: '16/06' #data da análise
+output:
+  pdf_document: default
+  html_document: default 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE
+                      )
+
+library(readr)
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+x6 <- read_delim("x6.csv", delim = ";", escape_double = FALSE, 
+    trim_ws = TRUE)
+```
+
+## Análise exploratória dos dados
+
+```{r echo=FALSE}
+summary(x6$num_leitos_estab_saude #variável para análise
+				)
+```
+
+
+## Boxplot
+
+```{r echo=FALSE}
+boxplot(x6$num_leitos_estab_saude,#variável para análise
+				ylab = 'numero leitos estabelecimento de saude' #Título da variável
+				)
+```
+
+## Descrição
+
+A região A se destaca são de 25 á 50 são lidoia do usl,xavantina,coronel freitas, caxambu do sul, ipira sao jose do cedro, alto bela vista descanso,modelo, catanduvas, erval do oeste,agua doce caibi,nova erechim, sao joa do oeste peritiba,saudades,treze tilias,tunapolis,ibicare,ita,quaraciaba,palma sola,mondai,seara,irani,xaxim,faxinal dos guedes,quilombo,campo ere,cunha pora,dionisio cerqueira, de 54 á 100 são itapiranga, ponte serrada, sao lourenço do oeste sao carlos,palmitos, sao miguel do oeste, maravilha,abelardo luz, de 130 á 200 temos caoinzal, xanxere, joaçaba, campos novos, concordia, temos um ponto que esta muito diferente que é chapecó com números de leitos 394.

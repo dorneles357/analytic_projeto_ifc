@@ -1,0 +1,38 @@
+---
+title: "numero de estabelicimento de saude" #nome da variável
+author: "wesley" #seu nome
+date: '016/06' #data da análise
+output:
+  pdf_document: default
+  html_document: default 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE
+                      )
+
+library(readr)
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+x5 <- read_delim("x5.csv", delim = ";", escape_double = FALSE, 
+    trim_ws = TRUE)
+```
+
+## Análise exploratória dos dados
+
+```{r echo=FALSE}
+summary(x5$num_estab_saude#variável para análise
+				)
+```
+
+
+## Boxplot
+
+```{r echo=FALSE}
+boxplot(x5$num_estab_saude,#variável para análise
+				ylab = 'numero de estabelicimento de saude' #Título da variável
+				)
+```
+
+## Descrição
+
+A região que se destacam entre 15 á 25 são maravilha,capinzal,xaxim,seara,sao lourenco do oeste, campos novos, de 25 á 45 são joacaba, sao miguel do oeste, xanxere. temos doi pontos que varião bastante que são concordia com 85 e chapeco com 117.

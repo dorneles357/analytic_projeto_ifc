@@ -1,0 +1,17 @@
+"0","knitr::opts_chunk$set(echo = TRUE)"
+"0",""
+"0","library(readr)"
+"0","setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')"
+"2","Warning:"
+"2"," The working directory was changed to /home/ebenezer/workspace/projects/analytic/projeto_ifc/data inside a notebook chunk. The working directory will be reset when the chunk is finished running. Use the knitr root.dir option in the setup chunk to change the working directory for notebook chunks.
+"
+"0","x2 <- read_delim(""x2.csv"", #altere para variável em análise"
+"0","                 delim = "";"", "
+"0","                 escape_double = FALSE, "
+"0","                col_types = cols(...1 = col_skip()), "
+"0","                trim_ws = TRUE"
+"0","                )"
+"2","Warning:"
+"2"," The following named parsers don't match the column names: ...1
+"
+"0","               "
