@@ -1,0 +1,40 @@
+---
+title: "Taxa de desocupação" #nome da variável
+author: "wesley" #seu nome
+date: '16/06' #data da análise
+output:
+  pdf_document: default
+  html_document: default 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE
+                      )
+
+library(readr)
+setwd('/home/ebenezer/workspace/projects/analytic/projeto_ifc/data')
+x9 <- read_delim("x9.csv", delim = ";", 
+    escape_double = FALSE, col_types = cols(taxa_desocupacao = col_number()), 
+    locale = locale(decimal_mark = ","), 
+    trim_ws = TRUE)
+```
+
+## Análise exploratória dos dados
+
+```{r echo=FALSE}
+summary(x9$taxa_desocupacao #variável para análise
+				)
+```
+
+
+## Boxplot
+
+```{r echo=FALSE}
+boxplot(x9$taxa_desocupacao,#variável para análise
+				ylab = 'Taxa de desocupação' #Título da variável
+				)
+```
+
+## Descrição
+
+A regiões seguem a tendência central.
